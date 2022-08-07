@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>TopPomodoro</title>
+</head>
+
+<body>
+  <section class="tomato">
+    <div class="header">
+      <span data-tab-target="#focus-time" class="nav active">Focus Time</span> <!--三个span对应前面三个按钮，都有nav的class，data-的结构是存放用户自定义的，这里是自定义了tag-target-->
+      <span data-tab-target="#short-break" class="nav">Short Break</span>
+      <span data-tab-target="#long-rest" class="nav">Long Rest</span>
+    </div> 
+    <div class="content"> <!--content对应表的面板，下面对应三个小面板-->
+        <div id="focus-time" class="active" data-tab-content><!--id对应data-tab-target的id，当我们点击表的按键的时候，其实是通过data-tab-content里面的数据来获取到对应哪一个面板，class有active就是当前激活项（点哪个就有）-->
+          <div class="time"><!--对应表上数字的内容-->
+            <span>23:45</span><!--因为每次点的时候时间不停变化，这样只需要通过js来控制而不是手动输入-->
+          </div>
+          <div class="start">Start
+          </div><!--按钮-->
+        </div>
+        <div id="short-break" data-tab-content><!--三个data-tab-content是方便获取三个面板-->
+          <div class="time">
+            <span>1111</span>
+          </div>
+          <div class="start">Stop
+          </div>
+        </div>
+        <div id="long-rest" data-tab-content>
+          <div class="time">
+            <span>43:21</span>
+          </div>
+          <div class="start">Reset
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <script type='module' src="script.js"></script>
+</body>
+</html>
